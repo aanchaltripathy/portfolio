@@ -1,0 +1,83 @@
+{
+    "skills": [
+      {
+        "id": "1",
+        "src": "../image/REACT.png",
+        "title": "React.Js"
+        },
+      {
+        "id": "2",
+        "src": "../image/EXPRESS.png",
+        "title": "Express.Js"},
+      {
+        "id": "3",
+        "src": "../image/NODEJS.png",
+        "title": "Node.Js"},
+      {
+        "id": "4",
+        "src": "../image/MONGO.png",
+        "title": "MongoDB"},
+        {
+            "id": "5",
+            "src": "../image/C++.png",
+            "title": "C++"
+            },
+            {
+                "id": "6",
+                "src": "../image/JAVA.png",
+                "title": "Java"
+                },
+                {
+                    "id": "7",
+                    "src": "../image/SQLMY.png",
+                    "title": "MySql"
+                    },
+                    {
+                        "id": "8",
+                        "src": "../image/sk3.png",
+                        "title": "Redux"
+                        }
+    ],
+    "portfolio": [
+      {
+        "id": "1",
+        "src": "../image/netflix.png",
+        "title": "Netflix Clone",
+         "link": "View In Github"
+      },
+      {
+        "id": "2",
+        "src": "./image/hand-landmarks.png",
+        "title": "Hand Gesture Recognition",
+        "link": "View In Github"
+      }
+      
+    ],
+    "testimonial": [
+      {
+        "id": "1",
+        "count": "5",
+        "src": "./img/avatar-image.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+        "author_name": "Dianne Russel",
+        "author_designation": "Starbucks"
+      },
+      {
+        "id": "2",
+        "count": "5",
+        "src": "./img/avatar-image-1.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+        "author_name": "Kristin Watson",
+        "author_designation": "Louis Vuitton"
+      },
+      {
+        "id": "3",
+        "count": "5",
+        "src": "./img/avatar-image-2.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+        "author_name": "Kathryn Murphy",
+        "author_designation": "McDonald's"
+      }
+    ]
+  }
+  
