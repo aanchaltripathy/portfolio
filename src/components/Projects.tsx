@@ -10,52 +10,52 @@ const GITHUB_BASE = "https://github.com/aanchaltripathy";
 const projects = [
   {
     id: 1,
-    title: "SmartFinance+",
+    title: "SmartStats",
     description: "A finance app with goal tracking, anomaly detection, and analytics. Features real-time financial insights and smart budgeting tools.",
-    image: "/api/placeholder/400/250",
+    image: "/projects/smart-stats.png",
     technologies: ["React Native", "TypeScript", "Firebase", "Charts.js"],
     github: `${GITHUB_BASE}/SmartFinancePlus`
   },
   {
     id: 2,
-    title: "MetroPay System",
-    description: "Payment-integrated metro system with real-time tracking, fare calculation, and seamless payment processing.",
-    image: "/api/placeholder/400/250",
-    technologies: ["React Native", "Node.js", "Stripe", "Socket.io"],
+    title: "Imagine Go",
+    description: "A telecom service mobile application that enables users to manage their accounts, track usage, and perform transactions like top-ups, plan upgrades, and bill payments seamlessly.",
+    image: "/projects/imagine.png",
+    technologies: ["React Native","Redux Toolkit", "Firebase", "REST APIs", "React Navigation"],
     github: `${GITHUB_BASE}/MetroPay-System`
   },
   {
     id: 3,
-    title: "HealthTracker Pro",
+    title: "NCRTC",
     description: "Comprehensive health tracking app with workout planning, nutrition tracking, and progress analytics.",
-    image: "/api/placeholder/400/250",
-    technologies: ["React Native", "Redux", "HealthKit", "GraphQL"],
+    image: "/projects/playstore.png",
+    technologies: ["React Native", "TypeScript", "Redux", "Context API", "Firebase Notifications", "REST APIs"],
     github: `${GITHUB_BASE}/HealthTrackerPro`
   },
-  {
-    id: 4,
-    title: "TaskFlow",
-    description: "Collaborative task management app with real-time updates, team collaboration, and project tracking.",
-    image: "/api/placeholder/400/250",
-    technologies: ["React Native", "TypeScript", "Firebase", "Redux"],
-    github: `${GITHUB_BASE}/TaskFlow`
-  },
-  {
-    id: 5,
-    title: "WeatherNow",
-    description: "Real-time weather app with location-based forecasts, severe weather alerts, and interactive maps.",
-    image: "/api/placeholder/400/250",
-    technologies: ["React Native", "OpenWeather API", "Maps", "Push Notifications"],
-    github: `${GITHUB_BASE}/WeatherNow`
-  },
-  {
-    id: 6,
-    title: "EduLearn",
-    description: "Educational platform with interactive courses, progress tracking, and offline learning capabilities.",
-    image: "/api/placeholder/400/250",
-    technologies: ["React Native", "Video Streaming", "SQLite", "Offline Sync"],
-    github: `${GITHUB_BASE}/EduLearn`
-  }
+  // {
+  //   id: 4,
+  //   title: "TaskFlow",
+  //   description: "Collaborative task management app with real-time updates, team collaboration, and project tracking.",
+  //   image: "/api/placeholder/400/250",
+  //   technologies: ["React Native", "TypeScript", "Firebase", "Redux"],
+  //   github: `${GITHUB_BASE}/TaskFlow`
+  // },
+  // {
+  //   id: 5,
+  //   title: "WeatherNow",
+  //   description: "Real-time weather app with location-based forecasts, severe weather alerts, and interactive maps.",
+  //   image: "/api/placeholder/400/250",
+  //   technologies: ["React Native", "OpenWeather API", "Maps", "Push Notifications"],
+  //   github: `${GITHUB_BASE}/WeatherNow`
+  // },
+  // {
+  //   id: 6,
+  //   title: "EduLearn",
+  //   description: "Educational platform with interactive courses, progress tracking, and offline learning capabilities.",
+  //   image: "/api/placeholder/400/250",
+  //   technologies: ["React Native", "Video Streaming", "SQLite", "Offline Sync"],
+  //   github: `${GITHUB_BASE}/EduLearn`
+  // }
 ];
 
 export default function Projects() {
@@ -73,7 +73,7 @@ export default function Projects() {
         >
           <div className="text-center mb-16">
             <motion.h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Featured Projects</span>
+              <span className="gradient-text">Projects</span>
             </motion.h2>
             <motion.div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto" />
           </div>
@@ -90,9 +90,35 @@ export default function Projects() {
                 className="group bg-gray-800/50 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300"
               >
                 <div className="relative overflow-hidden">
-                  <div className="w-full h-48 bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center">
-                    <span className="text-gray-400 text-sm">Project Image</span>
-                  </div>
+                <div className="relative w-full h-48">
+  <img
+    src={project.image}
+    alt={project.title}
+    className="w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+    <motion.a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="p-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors"
+    >
+      <Github size={20} className="text-white" />
+    </motion.a>
+    <motion.a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="p-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors"
+    >
+      <ExternalLink size={20} className="text-white" />
+    </motion.a>
+  </div>
+</div>
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     <motion.a
                       href={project.github}

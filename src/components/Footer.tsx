@@ -25,7 +25,7 @@ export default function Footer() {
             >
               <Heart size={16} className="text-red-500" />
             </motion.div>
-            <span>by Your Name</span>
+            <span>by Me</span>
           </motion.div>
           
           <motion.div

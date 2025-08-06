@@ -8,13 +8,13 @@ import { Mail, Github, Linkedin, Twitter, Send, ArrowRight } from 'lucide-react'
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/yourusername",
+    url: "https://github.com/aanchaltripathy",
     icon: Github,
     color: "hover:text-gray-300"
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/aanchal-tripathy-127321161/",
     icon: Linkedin,
     color: "hover:text-blue-400"
   },
@@ -26,7 +26,7 @@ const socialLinks = [
   },
   {
     name: "Email",
-    url: "mailto:your-email@example.com",
+    url: "mailto:aanchaltripathy24@gmail.com",
     icon: Mail,
     color: "hover:text-red-400"
   }
@@ -52,7 +52,7 @@ export default function Contact() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="gradient-text">Let's Build Something Amazing</span>
+              <span className="gradient-text">Let's Build Something Amazing?</span>
             </motion.h2>
             <motion.div 
               className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"
@@ -119,7 +119,7 @@ export default function Contact() {
                   <textarea
                     rows={5}
                     className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                    placeholder="Tell me about your project or just say hello!"
+                    placeholder="How can I help?"
                   />
                 </div>
                 <motion.button
@@ -155,11 +155,11 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-white">Email</h4>
-                    <p className="text-gray-300">your-email@example.com</p>
+                    <p className="text-gray-300">aanchaltripathy24@gmail.com</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-lg border border-gray-700/50">
+                {/* <div className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-lg border border-gray-700/50">
                   <div className="p-3 bg-green-500/20 rounded-lg">
                     <Send size={24} className="text-green-400" />
                   </div>
@@ -167,7 +167,7 @@ export default function Contact() {
                     <h4 className="font-medium text-white">Response Time</h4>
                     <p className="text-gray-300">Usually within 24 hours</p>
                   </div>
-                </div>
+                </div> */}
               </div>
               
               <div>
@@ -203,14 +203,26 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 1.4 }}
             className="text-center mt-16"
           >
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold glow hover:glow transition-all duration-300 mx-auto"
             >
               Download Resume
               <ArrowRight size={20} />
-            </motion.button>
+            </motion.button> */}
+         <div className="flex justify-center mt-6">
+  <motion.a
+    href="/resume.pdf"
+    download="Aanchal_Tripathy_Resume.pdf"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+  >
+    Download Resume
+    <ArrowRight size={20} />
+  </motion.a>
+</div>
           </motion.div>
         </motion.div>
       </div>

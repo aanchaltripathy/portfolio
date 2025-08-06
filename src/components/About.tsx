@@ -58,14 +58,14 @@ export default function About() {
               
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="bg-gray-800/50 px-4 py-2 rounded-full text-sm">
-                  <span className="text-blue-400">1+</span> Year Experience
+                  <span className="text-blue-400">1</span> Year of Experience
                 </div>
                 <div className="bg-gray-800/50 px-4 py-2 rounded-full text-sm">
                   <span className="text-purple-400">10+</span> Apps Built
                 </div>
-                <div className="bg-gray-800/50 px-4 py-2 rounded-full text-sm">
+                {/* <div className="bg-gray-800/50 px-4 py-2 rounded-full text-sm">
                   <span className="text-pink-400">5+</span> Happy Clients
-                </div>
+                </div> */}
               </div>
             </motion.div>
             

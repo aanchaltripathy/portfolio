@@ -8,8 +8,8 @@ import { Clock, TrendingUp, Zap } from 'lucide-react';
 const currentProjects = [
   {
     id: 1,
-    title: "SmartFinance+ Production",
-    description: "Currently evolving SmartFinance+ into a production-grade finance app with real-time analytics and anomaly detection.",
+    title: "SmartStats Production",
+    description: "Currently evolving SmartStats into a production-grade finance app with real-time analytics and anomaly detection.",
     progress: 85,
     status: "In Progress",
     technologies: ["React Native", "TypeScript", "Firebase", "Analytics"],
@@ -18,21 +18,22 @@ const currentProjects = [
   },
   {
     id: 2,
-    title: "AI-Powered Metro System",
-    description: "Developing an AI-enhanced metro payment system with predictive analytics and smart routing.",
+    title: "CUMTA - Transit Companion App",
+    description: "A cross-platform Expo app designed for users of wearable/keychain NCMC cards, enabling smooth metro travel and account management. The app provides real-time balance info, journey history, recharge details, and exclusive rewards in a clean, transport-oriented UI.",
     progress: 60,
     status: "In Progress",
-    technologies: ["React Native", "Python", "TensorFlow", "Payment APIs"],
+    technologies: ["React Native (Expo)", "TypeScript", "React Navigation","Payment APIs"],
     icon: Zap,
     color: "from-purple-500 to-pink-500"
   },
+ 
   {
     id: 3,
-    title: "Health Analytics Platform",
-    description: "Building a comprehensive health analytics platform with machine learning insights and predictive health monitoring.",
+    title: "EveRi – Casino Incident Management",
+    description: "An enterprise-grade incident management platform for a leading casino in Dubai, enabling real-time incident reporting, role-based access, technician assignment, and workflow approvals.",
     progress: 40,
     status: "Planning",
-    technologies: ["React Native", "HealthKit", "ML", "Analytics"],
+    technologies: ["React", "Node.js", "PostgreSQL", "JWT", "REST APIs"],
     icon: Clock,
     color: "from-green-500 to-emerald-500"
   }
