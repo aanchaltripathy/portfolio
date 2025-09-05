@@ -1,8 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 import { Mail, Github, Linkedin, Twitter, Send, ArrowRight } from 'lucide-react';
 
 const socialLinks = [
@@ -33,23 +31,22 @@ const socialLinks = [
 ];
 
 export default function Contact() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   return (
-    <section id="contact" className="py-20 gradient-bg">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="gradient-bg min-h-screen overflow-x-hidden py-24 md:py-28 scroll-mt-[96px] md:scroll-mt-[112px]">
+      <div className="container mx-auto px-4 max-w-5xl">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
             <motion.h2 
               className="text-4xl md:text-5xl font-bold mb-6"
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="gradient-text">Let's Build Something Amazing?</span>
@@ -57,86 +54,90 @@ export default function Contact() {
             <motion.div 
               className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"
               initial={{ width: 0 }}
-              animate={isInView ? { width: 96 } : { width: 0 }}
+              whileInView={{ width: 96 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             />
             <motion.p 
-              className="text-xl text-gray-300 mt-6 max-w-2xl mx-auto"
+              className="text-xl text-gray-300 mt-6 max-w-2xl mx-auto leading-relaxed break-words hyphens-auto"
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               I'm always open to discussing new opportunities, interesting projects, or just having a chat about mobile development.
             </motion.p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 0.8 }}
               className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50"
             >
               <h3 className="text-2xl font-semibold mb-6 text-white">Send me a message</h3>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
-                    placeholder="What's this about?"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    rows={5}
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                    placeholder="How can I help?"
-                  />
-                </div>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold glow hover:glow transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  <Send size={20} />
-                  Send Message
-                </motion.button>
-              </form>
+              <form action="https://formspree.io/f/xdkdpkyo" method="POST" className="space-y-6">
+  <div className="grid md:grid-cols-2 gap-6">
+    <div>
+      <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
+      <input
+        type="text"
+        name="name"
+        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
+        placeholder="Your name"
+        required
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+      <input
+        type="email"
+        name="email"
+        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
+        placeholder="your.email@example.com"
+        required
+      />
+    </div>
+  </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+    <input
+      type="text"
+      name="subject"
+      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
+      placeholder="What's this about?"
+      required
+    />
+  </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+    <textarea
+      rows={5}
+      name="message"
+      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+      placeholder="How can I help?"
+      required
+    ></textarea>
+  </div>
+  <motion.button
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold glow hover:glow transition-all duration-300 flex items-center justify-center gap-2"
+  >
+    <Send size={20} />
+    Send Message
+  </motion.button>
+</form>
             </motion.div>
             
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 1 }}
               className="space-y-8"
             >
@@ -199,7 +200,8 @@ export default function Contact() {
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 1.4 }}
             className="text-center mt-16"
           >
@@ -214,7 +216,7 @@ export default function Contact() {
          <div className="flex justify-center mt-6">
   <motion.a
     href="/resume.pdf"
-    download="Aanchal_Tripathy_Resume.pdf"
+    download="AanchalTripathy.pdf"
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
     className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
